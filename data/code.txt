@@ -1,73 +1,131 @@
-console.log("Hello World");
-print("Hello World")
-System.out.println("Hello World");
-std::cout << "Hello World" << std::endl;
-public static void main(String[] args)
-int main(int argc, char** argv)
-const [count, setCount] = useState(0);
-useEffect(() => { ... }, []);
-export default function App() {
-import React from 'react';
-import express from 'express';
-const app = express();
-app.listen(3000, () => {});
-def __init__(self, name):
-if __name__ == "__main__":
-[x for x in range(10) if x % 2 == 0]
-async def fetch_data():
-await Promise.all(requests);
-SELECT * FROM users;
-INSERT INTO table VALUES (1, 'name');
-UPDATE users SET score = 100 WHERE id = 1;
-git commit -m "fix: bug in logic"
-npm install --save-dev typescript
-<div className="container mx-auto">
-<h1 class="text-3xl font-bold">
-localStorage.getItem('token');
-window.addEventListener('resize', () => {});
-document.getElementById('app');
-fetch('/api/data').then(res => res.json());
-interface User { id: string; name: string; }
-type Action = { type: 'INCREMENT' };
-struct Point { x: i32, y: i32 }
-fn main() { println!("Hello"); }
-package main; import "fmt";
-func main() { fmt.Println("Go") }
-<?php echo "Hello PHP"; ?>
-var_dump($variable);
-die("Error connecting to DB");
-<html><body><h1>Title</h1></body></html>
-body { margin: 0; padding: 0; }
-display: flex; justify-content: center;
-background-color: #f0f0f0;
-border-radius: 8px; box-shadow: 0 2px 4px;
-const fs = require('fs');
-fs.readFileSync('file.txt', 'utf8');
-JSON.stringify(data, null, 2);
-try { ... } catch (err) { console.error(err); }
-while (true) { break; }
-for (let i = 0; i < arr.length; i++)
-Array.from({ length: 5 }, (_, i) => i);
-Object.keys(myObject).map(key => ...);
-const { value } = target;
-(a, b) => a + b;
-module.exports = { ... };
-include <iostream>
-using namespace std;
-vector<int> v; v.push_back(1);
-ptr = (int*)malloc(sizeof(int));
-free(ptr);
+print("Hello")
+console.log(x)
+int x = 5;
+let y = 10;
+if (a == b)
+for i in range(5)
+while (true)
+return x + y;
+import os
+def main():
+class User:
+x = [1, 2, 3]
+y = {"a": 1}
+const a = 5;
+var b = true;
+Boolean flag = false;
+String s = "hi";
+List<int> nums;
+array.push(x)
+list_append(y)
+try: catch:
+async def f():
+await do_thing()
+SELECT * FROM
+INSERT INTO
+UPDATE users SET
+git add .
+git commit
+npm install
+docker-compose
+pip install
+yarn add
+sudo apt update
+ls -la
+cd ..
+mkdir new_dir
+touch file.py
+rm -rf temp
+cat config.json
+grep "test"
+find . -name
+ssh user@host
+curl -X GET
+wget http://
+chmod +x
+chown root
+export VAR=1
+echo $PATH
 #include <stdio.h>
-printf("%d\n", result);
-scanf("%s", name);
-enum Color { RED, GREEN, BLUE };
-@Component({ selector: 'app-root' })
-@Injectable() class MyService { }
-val list = listOf(1, 2, 3)
-fun findMax(a: Int, b: Int) = if (a > b) a else b
-String? name = stdin.readLineSync();
-void main() => runApp(MyApp());
-Widget build(BuildContext context) { }
-Set<Integer> unique = new HashSet<>();
-List<String> items = Arrays.asList("a", "b");
-return ResponseEntity.ok(body);
+#define MAX 100
+using namespace std;
+std::cout << x;
+public static void
+void main(String[]
+interface IApp
+struct Point
+fn main()
+println!("Hi")
+func main()
+fmt.Println
+<?php echo
+var_dump()
+<html></html>
+<div class="x">
+<h1>Title</h1>
+<p>Text</p>
+<img src="y">
+<a href="z">
+body { color: red; }
+margin: 0 auto;
+display: flex;
+padding: 10px;
+border: 1px solid;
+JSON.stringify()
+JSON.parse()
+setTimeout(() =>
+setInterval(f, 1)
+document.body
+window.location
+location.href
+history.back()
+alert("Hello")
+prompt("Name")
+confirm("Sure?")
+Math.random()
+Math.floor()
+Date.now()
+new Date()
+parseInt("123")
+parseFloat("1.1")
+x.toString()
+typeof x
+instanceof Y
+throw new Error
+debugger;
+continue;
+break;
+default:
+switch (x)
+export const x =
+module.exports =
+require('fs')
+process.exit(1)
+console.error()
+console.warn()
+clearTimeout(t)
+clearInterval(i)
+Object.keys(o)
+Object.values(o)
+arr.map(x => x)
+arr.filter(y)
+arr.reduce(z)
+arr.find(a)
+arr.sort()
+arr.length
+s.substring(0, 1)
+s.replace("a", "b")
+s.split(",")
+s.trim()
+s.toLowerCase()
+s.toUpperCase()
+localStorage.get
+sessionStorage.set
+fetch(url)
+response.json()
+Promise.resolve()
+Promise.reject()
+new Promise((r)
+.then(data =>)
+.catch(err =>)
+.finally(() =>)
