@@ -1,4 +1,4 @@
-
+#!/usr/bin/env python3
 import os
 import random
 import sys
@@ -23,9 +23,32 @@ except ImportError:
 # --- Configuration & Data ---
 SOUNDS = {}
 
+# Determine paths
+APP_NAME = "hypertyper"
 
-HIGHSCORE_FILE = "highscores.json"
-SETTINGS_FILE = "settings.json"
+# 1. Data Directory (Read-only assets: words, sounds)
+# Check local first (dev mode), then system install path
+local_data = os.path.join(os.path.dirname(os.path.abspath(__file__)), "data")
+if os.path.exists(local_data):
+    DATA_DIR = local_data
+else:
+    # Standard Linux install path
+    DATA_DIR = os.path.join("/usr/share", APP_NAME, "data")
+
+# 2. Config Directory (Writable: settings, highscores)
+# Use XDG_CONFIG_HOME or default to ~/.config
+xdg_config = os.environ.get("XDG_CONFIG_HOME", os.path.join(os.path.expanduser("~"), ".config"))
+CONFIG_DIR = os.path.join(xdg_config, APP_NAME)
+
+# Ensure config directory exists
+os.makedirs(CONFIG_DIR, exist_ok=True)
+
+HIGHSCORE_FILE = os.path.join(CONFIG_DIR, "highscores.json")
+SETTINGS_FILE = os.path.join(CONFIG_DIR, "settings.json")
+
+# Backwards compatibility: Migration from local dir if user was running locally before
+# (Optional: You could add logic here to move local json files to CONFIG_DIR if they exist)
+
 WORD_FILE = "words.txt"
 BACKUP_WORDS = ["apple", "banana", "cherry", "date", "elderberry", "fig", "grape", "lemon", "lime", "mango"]
 
@@ -42,8 +65,8 @@ def load_settings():
     """Loads settings from data/settings.json, creating it with defaults if missing."""
     global SETTINGS
     
-    # Path is inside data folder
-    file_path = os.path.join("data", SETTINGS_FILE)
+    # Path is global constant now
+    file_path = SETTINGS_FILE
     
     if not os.path.exists(file_path):
         SETTINGS = DEFAULT_SETTINGS.copy()
@@ -65,7 +88,7 @@ def save_settings(new_settings):
     global SETTINGS
     SETTINGS = new_settings
     
-    file_path = os.path.join("data", SETTINGS_FILE)
+    file_path = SETTINGS_FILE
     try:
         with open(file_path, 'w') as f:
             json.dump(SETTINGS, f, indent=4)
@@ -77,8 +100,8 @@ def load_words(filename, exact_match=False):
     If exact_match is True, preserves case and allows punctuation/spaces.
     """
     words = []
-    # Look for filename inside the 'data' folder
-    file_path = os.path.join("data", filename)
+    # Look for filename inside the DATA_DIR folder
+    file_path = os.path.join(DATA_DIR, filename)
     
     if os.path.exists(file_path):
         try:
@@ -106,9 +129,13 @@ def load_words(filename, exact_match=False):
 
 
 def organize_sound_files():
-    """Checks for a root 'sounds' folder and moves it to 'data/sounds'."""
+    """Checks for a root 'sounds' folder and moves it to data/sounds (Dev mode only)."""
+    # Only run if we are in local dev mode
+    if DATA_DIR != os.path.join(os.path.dirname(os.path.abspath(__file__)), "data"):
+        return
+
     root_sounds = "sounds"
-    dest_sounds = os.path.join("data", "sounds")
+    dest_sounds = os.path.join(DATA_DIR, "sounds")
     
     if os.path.exists(root_sounds) and os.path.isdir(root_sounds):
         if not os.path.exists(dest_sounds):
@@ -145,7 +172,7 @@ def init_audio():
         "victory": "victory.wav"
     }
     
-    base_path = os.path.join("data", "sounds")
+    base_path = os.path.join(DATA_DIR, "sounds")
     
     print(f"{Fore.CYAN}Loading sounds...{Style.RESET_ALL}")
     for name, filename in sound_files.items():
