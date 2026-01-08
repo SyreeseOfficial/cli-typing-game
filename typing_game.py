@@ -4,6 +4,10 @@ import random
 import sys
 import time
 import json
+from colorama import Fore, Back, Style, init
+
+# Initialize colorama
+init(autoreset=True)
 
 # --- Configuration & Data ---
 
@@ -42,6 +46,17 @@ def clear_screen():
     else:
         os.system('clear')
 
+def countdown():
+    """Runs a 3-2-1-GO countdown."""
+    for i in [3, 2, 1]:
+        clear_screen()
+        print(f"\n\n\n\t\t{Fore.CYAN}{Style.BRIGHT}{i}")
+        time.sleep(1)
+    
+    clear_screen()
+    print(f"\n\n\n\t\t{Fore.GREEN}{Style.BRIGHT}GO!")
+    time.sleep(0.5)
+
 def pause():
     """Waits for user input to continue."""
     input("\nPress Enter to continue...")
@@ -76,21 +91,21 @@ def update_high_score(mode_name, score):
     if score > current_best:
         scores[mode_name] = score
         save_high_scores(scores)
-        print(f"\nNEW HIGH SCORE for {mode_name}: {score}!")
+        print(f"\n{Fore.GREEN}{Style.BRIGHT}NEW HIGH SCORE for {mode_name}: {score}!{Style.RESET_ALL}")
     else:
-        print(f"\nHigh Score for {mode_name}: {current_best}")
+        print(f"\n{Fore.CYAN}High Score for {mode_name}: {current_best}{Style.RESET_ALL}")
 
 def show_high_scores():
     """Displays all high scores."""
     clear_screen()
-    print("--- HIGH SCORES ---")
+    print(f"{Fore.CYAN}{Style.BRIGHT}--- HIGH SCORES ---{Style.RESET_ALL}")
     scores = load_high_scores()
     
     if not scores:
         print("No scores recording yet.")
     else:
         for mode, score in scores.items():
-            print(f"{mode}: {score}")
+            print(f"{mode}: {Fore.YELLOW}{score}{Style.RESET_ALL}")
     
     print("-" * 20)
     print()
@@ -99,8 +114,13 @@ def show_high_scores():
 # --- Game Modes ---
 
 def streak_mode():
-    """Runs the Streak Mode game loop with a 30s global timer."""
+    """Runs the Streak Mode game loop with a 30s global timer and game feel."""
+    # Countdown
+    countdown()
+    
     score = 0
+    total_chars_typed = 0
+    correct_words = 0
     start_time = time.time()
     time_limit = 30.0
     
@@ -108,23 +128,18 @@ def streak_mode():
         # 1. Check time BEFORE showing word
         elapsed = time.time() - start_time
         if elapsed >= time_limit:
-            print("\nTime's Up! Game Over.")
-            print(f"Final Score: {score}")
-            update_high_score("Streak", score)
-            print()
-            pause()
-            break
+            break # Go to Game Over logic
 
         remaining = max(0, int(time_limit - elapsed))
         
         clear_screen()
-        print("--- STREAK MODE ---")
-        print(f"CURRENT SCORE: {score}   |   TIME LEFT: ~{remaining}s")
+        print(f"{Fore.CYAN}--- STREAK MODE ---{Style.RESET_ALL}")
+        print(f"CURRENT SCORE: {Fore.YELLOW}{score}{Style.RESET_ALL}   |   TIME LEFT: {Fore.YELLOW}~{remaining}s{Style.RESET_ALL}")
         print("-" * 40)
         print()
         
         target_word = random.choice(WORDS)
-        print(f"Word:  {target_word}")
+        print(f"Word:  {Style.BRIGHT}{Fore.WHITE}{target_word}{Style.RESET_ALL}")
         print()
         
         try:
@@ -135,24 +150,45 @@ def streak_mode():
         # 2. Check time AFTER input
         elapsed = time.time() - start_time
         if elapsed >= time_limit:
-            print("\nTime's Up! (You ran out of time while typing)")
-            print(f"Final Score: {score}")
-            update_high_score("Streak", score)
-            print()
-            pause()
-            break
+            break # Go to Game Over logic
 
         # 3. Sudden Death Check
         if user_input == target_word:
-            score += len(target_word)
+            word_len = len(target_word)
+            score += word_len
+            total_chars_typed += word_len
+            correct_words += 1
+            # Green flash logic: Just print a quick success line before clearing
+            print(f"{Fore.GREEN}        {target_word} OK!{Style.RESET_ALL}")
+            time.sleep(0.2)
         else:
             print()
-            print(f"Wrong! You typed '{user_input}', expected '{target_word}'.")
-            print(f"Final Score: {score}")
-            update_high_score("Streak", score)
-            print()
-            pause()
-            break
+            print(f"{Fore.RED}Wrong! You typed '{user_input}', expected '{target_word}'.{Style.RESET_ALL}")
+            break # Go to Game Over logic
+
+    # --- GAME OVER SCREEN ---
+    final_elapsed = time.time() - start_time
+    # Cap elapsed at time_limit for calc if it ran out, but use actual for sudden death
+    # Actually, user wants "Time spent in minutes", so actual elapsed is best.
+    
+    if final_elapsed < 1.0: 
+        final_elapsed = 1.0 # Avoid div by zero
+    
+    minutes = final_elapsed / 60.0
+    wpm = (total_chars_typed / 5.0) / minutes if minutes > 0 else 0
+    
+    print(f"\n{Fore.RED}{Style.BRIGHT}GAME OVER{Style.RESET_ALL}")
+    print(f"Final Score: {Fore.YELLOW}{score}{Style.RESET_ALL}")
+    
+    # Show Stats
+    print("-" * 30)
+    print(f"Total Words Typed: {correct_words}")
+    print(f"WPM: {Fore.CYAN}{wpm:.1f}{Style.RESET_ALL}")
+    print("-" * 30)
+    
+    update_high_score("Streak", score)
+    print()
+    pause()
 
 def show_placeholder(feature_name):
     """Displays a 'Coming Soon' message."""
@@ -167,11 +203,11 @@ def main_menu():
     """Runs the main menu loop."""
     while True:
         clear_screen()
-        print("=== CLI TYPING GAME ===")
-        print("1. Play Game")
-        print("2. High Scores")
-        print("3. Settings")
-        print("4. Quit")
+        print(f"{Fore.CYAN}{Style.BRIGHT}=== CLI TYPING GAME ==={Style.RESET_ALL}")
+        print(f"{Fore.CYAN}1. Play Game{Style.RESET_ALL}")
+        print(f"{Fore.CYAN}2. High Scores{Style.RESET_ALL}")
+        print(f"{Fore.CYAN}3. Settings{Style.RESET_ALL}")
+        print(f"{Fore.CYAN}4. Quit{Style.RESET_ALL}")
         print()
         
         try:
