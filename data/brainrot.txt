@@ -122,7 +122,6 @@ commie
 fash
 tankie
 ancap
-based
 redpilled
 bluepilled
 blackpilled
@@ -147,7 +146,6 @@ rain
 storm
 snow
 wind
-fire
 earth
 air
 avatar
@@ -175,7 +173,6 @@ anti
 pro
 neo
 post
-meta
 hyper
 super
 ultra
@@ -315,7 +312,6 @@ vancouver
 seattle
 portland
 sf
-la
 sd
 vegas
 phoenix
@@ -360,10 +356,8 @@ ljubljana
 sarajevo
 skopje
 tirana
-athens
 nicosia
 valletta
-sanity
 sanity
 insanity
 madness
@@ -447,7 +441,6 @@ phantom
 specter
 wraith
 shade
-shadow
 demon
 devil
 angel
@@ -601,8 +594,6 @@ nutrient
 sugar
 fat
 oil
-salt
-water
 bread
 rice
 potato
@@ -769,7 +760,6 @@ mace
 allspice
 star
 anise
-vanilla
 saffron
 mustard
 ketchup
@@ -782,14 +772,12 @@ fish
 oyster
 hoisin
 ponzu
-teriyaki
 bbq
 ranch
 caesar
 italian
 french
 russian
-thousand
 island
 blue
 cheese
@@ -799,7 +787,6 @@ cider
 wine
 malt
 sherry
-rice
 white
 red
 black
@@ -816,14 +803,10 @@ americano
 mocha
 cortado
 flat
-white
 irish
 coffee
-tea
 cocoa
-chocolate
 milk
-water
 juice
 soda
 pop
@@ -835,23 +818,16 @@ fanta
 mountain
 dew
 dr
-pepper
-seven
 up
-ginger
 ale
 root
 beer
-cream
-orange
-grape
 lemonade
 limeade
 punch
 slushie
 smoothie
 shake
-malt
 float
 cocktail
 mocktail
@@ -870,37 +846,30 @@ mimosa
 bellini
 kir
 royale
-beer
-ale
 lager
 stout
 porter
 pilsner
 bock
-wheat
 saison
 ipa
 apa
 pale
 bitter
 amber
-red
 brown
 blonde
 golden
-cream
 kölsch
 altbier
 dunkel
 helles
 marzen
-vienna
 rauchbier
 lambic
 geuze
 kriek
 framboise
-cider
 perry
 mead
 sake
@@ -916,7 +885,6 @@ whiskey
 whisky
 bourbon
 scotch
-rye
 brandy
 cognac
 armagnac
@@ -945,7 +913,6 @@ mold
 yeast
 parasite
 worm
-bug
 insect
 spider
 scorpion
@@ -974,7 +941,6 @@ cocoon
 chrysalis
 nymph
 adult
-queen
 drone
 worker
 soldier
@@ -984,7 +950,6 @@ nest
 web
 trap
 bait
-poison
 spray
 repellent
 net
@@ -1034,9 +999,7 @@ flower
 blooms
 blossom
 petal
-leaf
 stem
-root
 bulb
 seed
 fruit
@@ -1054,8 +1017,6 @@ fungi
 mushroom
 toadstool
 truffle
-yeast
-mold
 mildew
 rot
 decay
@@ -1064,16 +1025,13 @@ compost
 mulch
 soil
 dirt
-earth
 mud
 clay
-sand
 gravel
 pebble
 stone
 rock
 boulder
-mountain
 hill
 valley
 canyon
@@ -1109,11 +1067,9 @@ plain
 desert
 dune
 oasis
-island
 atoll
 reef
 cove
-bay
 gulf
 fjord
 inlet
@@ -1149,8 +1105,6 @@ place
 circle
 square
 plaza
-park
-garden
 yard
 lawn
 patio
@@ -1164,7 +1118,6 @@ pergola
 gazebo
 pavilion
 tent
-camp
 site
 cabin
 cottage
@@ -1173,7 +1126,6 @@ shack
 house
 home
 apartment
-flat
 condo
 studio
 loft
@@ -1188,9 +1140,6 @@ keep
 dungeon
 prison
 jail
-cell
-cage
-pen
 pound
 shelter
 refuge
@@ -1218,36 +1167,24 @@ man
 woman
 boy
 girl
-child
 kid
-baby
 infant
 toddler
 teen
-adult
 elder
 senior
 ancestor
 descendant
-family
 kin
 clan
-tribe
-nation
-race
 species
 genus
-family
-order
 class
 phylum
-kingdom
-domain
 life
 death
 birth
 growth
-decay
 age
 time
 space
@@ -1264,8 +1201,6 @@ soft
 rough
 smooth
 heavy
-light
-fast
 slow
 good
 bad
@@ -1320,23 +1255,18 @@ eternally
 never
 not
 none
-no
 nay
 nope
 nah
 nix
 nil
-zero
 ought
-cipher
 blank
 empty
-void
 null
 invalid
 error
 mistake
-bug
 fault
 flaw
 defect
@@ -1363,11 +1293,7 @@ digit
 char
 string
 bool
-int
-float
 double
-void
-class
 struct
 enum
 union
@@ -1382,27 +1308,22 @@ else
 for
 while
 do
-switch
 case
 break
 continue
-return
 goto
-throw
 try
 catch
 finally
 public
 private
 protected
-friend
 virtual
 override
 abstract
 interface
 extends
 implements
-super
 this
 new
 delete
@@ -1443,7 +1364,6 @@ co_return
 atomic
 thread
 mutex
-lock
 sem
 cond
 barrier
@@ -1459,16 +1379,13 @@ lambda
 closure
 functor
 monad
-functor
 applicative
 monoid
 semigroup
 group
 ring
 field
-space
 vector
-matrix
 tensor
 scalar
 spinor
@@ -1481,7 +1398,6 @@ scheme
 stack
 groupoid
 category
-functor
 limit
 colimit
 adjoint
@@ -1492,7 +1408,6 @@ proof
 axiom
 logic
 set
-class
 type
 kind
 sort
@@ -1506,25 +1421,17 @@ relation
 function
 map
 graph
-tree
 list
 queue
-stack
 heap
 hash
-map
-set
 bag
 multiset
 multimap
 priority
 deque
 array
-vector
-string
 buffer
-stream
-handle
 pointer
 reference
 iterator
@@ -1537,7 +1444,6 @@ factory
 singleton
 prototype
 adapter
-bridge
 composite
 decorator
 facade
@@ -1547,15 +1453,10 @@ command
 chain
 strategy
 state
-template
 memento
 mediator
 interpreter
-iterator
-visitor
-null
 object
-pool
 cache
 undo
 redo
@@ -1574,13 +1475,11 @@ dummy
 driver
 runner
 suite
-case
 plan
 report
 pass
 fail
 skip
-error
 warn
 info
 verbose
@@ -1620,7 +1519,6 @@ ocaml
 erlang
 elixir
 lisp
-scheme
 racket
 prolog
 sql
@@ -1629,7 +1527,6 @@ mongo
 redis
 cassandra
 neo4j
-graph
 db
 table
 row
@@ -1640,11 +1537,7 @@ value
 id
 uuid
 guid
-hash
-salt
-pepper
 crypt
-cipher
 aes
 rsa
 ecc
@@ -1672,28 +1565,18 @@ icmp
 ip
 tcp
 udp
-bop
-socket
-port
 host
-domain
 url
 uri
 urn
-scheme
 user
-pass
 path
 query
 frag
-cookie
 header
-body
 payload
 get
-post
 put
-delete
 patch
 head
 opt
@@ -1701,11 +1584,9 @@ conn
 req
 res
 status
-code
 msg
 ok
 err
-bad
 auth
 forbidden
 found
@@ -1718,7 +1599,276 @@ length
 media
 expect
 teapot
-space
 stuck
-w
-l
+fanum tax
+skibidi toilet
+grimace shake
+baby gronk
+livvy dunne
+kai cenat
+ishowspeed
+quandale dingle
+goofy ahh
+uncle productions
+ocky way
+sussy baka
+among us
+freddy fazbear
+banban
+opila bird
+jumbo josh
+huggy wuggy
+titan cameraman
+smurf cat
+strawberry elephant
+cg5
+pizza tower
+lankybox
+rainbow friends
+garten of banban
+poppy playtime
+digital circus
+pomni
+jax
+caine
+kaufmo
+gloink
+bubble
+gangle
+zooble
+ragatha
+bomboclat
+mogging
+roemaxxing
+chug jug
+griddy
+deadass
+no cap
+on god
+fr fr
+respectfully
+caught in 4k
+main character
+npc energy
+villain arc
+canon event
+skill issue
+mid diff
+touch grass
+git gud
+bozo
+soyjak
+gigachad
+trad wife
+goth mommy
+muscle mommy
+zesty
+fruit cup
+side eye
+bombastic side eye
+criminal offensive
+period ahh
+purr
+slay queen
+ate that
+left no crumbs
+standing on business
+let him cook
+hold up
+wait a minute
+who let him cook
+metal pipe falling
+vine boom
+bruh sound effect
+emotional damage
+steven he
+asian failure
+corn kid
+it has the juice
+subway surfers
+family guy funny moments
+temple run
+boring ahh video
+mrbeast
+squid game
+lightskin stare
+sin city
+zoolander
+blue steel
+magnum
+monday left me broken
+cat meme
+maxwell the cat
+happy happy happy
+banana cat
+pedro pedro pedro
+racoon
+chipi chipi
+chapa chapa
+dubidubidu
+shikanokonokonokokoshitantan
+brainrot
+doomscrolling
+yapping
+professional yapper
+blud
+bro thinks he is him
+lil bro
+gang
+opps
+spin the block
+crashout
+crashing out
+tweaking
+geeked
+locked in
+fortnite battle pass
+victory royale
+pump shotgun
+tilted towers
+loot lake
+default dance
+floss
+take the l
+orange justice
+minecraft
+creeper
+herobrine
+nether reactor
+aether portal
+diamonds
+netherite
+lethal company
+bracken
+coilhead
+jester
+nutcracker
+thumper
+hoarding bug
+loot bug
+asset great great
+we love the company
+roblox
+life in paradise
+adopt me
+brookhaven
+bloxburg
+doors
+seek
+figure
+screech
+dupe
+rush
+ambush
+backrooms
+almond water
+level fun
+partygoer
+skin stealer
+entity
+liminal space
+dream speedrun
+georgenotfound
+sapnap
+badboyhalo
+manhunt
+water bucket
+mlg
+doritos
+mountain dew
+illuminati
+intervention
+quickscope
+360 noscope
+mom get the camera
+wow
+wombo combo
+happy feet
+that ain't falco
+ice spice
+munch
+grah
+pink pantheress
+boy's a liar
+cupid
+fifty fifty
+new jeans
+super shy
+eta
+ditto
+hype boy
+attention
+kpop stan
+army
+blink
+once
+stay
+moa
+fearnot
+tokyo drift
+fast and furious
+dom toretto
+john cena
+bing chilling
+social credit
+wok
+super idol
+105 degrees
+rickroll
+never gonna give you up
+darude sandstorm
+all star
+shrek
+donkey
+fiona
+lord farquaad
+somebody once told me
+peppa pig
+george
+daddy pig
+mummy pig
+bluey
+bingo
+bandit
+chilli
+socks
+cocomelon
+jj
+cody
+nico
+nina
+bella poarch
+khaby lame
+charlie damelio
+addison rae
+renegade
+savage
+classy
+boujee
+ratchet
+fit
+gas
+heat
+mood
+ick
+vent
+imp
+ez
+f
+rip
+pov
+tfw
+mfw
+ng
+ded
+oof
+yoink
+kobe
+ship
+otp
+uwu
+owo
+rawr
+xd
+sadge
+monkaw

@@ -608,7 +608,7 @@ def play_menu():
         elif choice == '7':
             streak_mode("Terminal Commands", "terminal.txt", exact_match=True)
         elif choice == '8':
-            streak_mode("Brainrot", "brainrot.txt")
+            streak_mode("Brainrot", "brainrot.txt", exact_match=True)
         elif choice == '9':
             streak_mode("UwU", "uwu.txt")
         elif choice == '10':
