@@ -1,7 +1,7 @@
 # Maintainer: Syreese <syreese@example.com>
 pkgname=hypertyper
 _pkgname=HyperTyper
-pkgver=1.0.0
+pkgver=1.0.1
 pkgrel=1
 pkgdesc="A CLI Typing Game with multiple modes, streaks, and sound effects"
 arch=('any')
