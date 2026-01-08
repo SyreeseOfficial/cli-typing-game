@@ -1,40 +1,324 @@
-sudo apt update
-git commit -m "msg"
-ls -la
+ls
+cd
+pwd
+mkdir
+rm
+mv
+cp
+touch
+cat
+grep
+echo
+man
+clear
+exit
+whoami
+top
+df -h
+du -sh
+ping
+git
+sudo
+apt
+ssh
+curl
+wget
+docker
+tar
+zip
+unzip
+ps
+kill
+history
+alias
+export
+nano
+vim
+git add
+git pull
+git push
+git init
+sh
+chmod
+chown
+reboot
+ls -l
+ls -a
+cd ..
+cd ~
+rm -rf
+mkdir -p
+cp -r
+mv -f
+cat -n
+tail -f
+head -n
+grep -i
+exit 0
+sudo su
+git commit
+git status
+git branch
+git checkout
+python3
+node
+npm
+yarn
+pip
+venv
+docker compose
 docker ps
-chmod +x script.py
-rm -rf node_modules
-grep -r "text" .
-find . -name "*.py"
-ssh user@hostname
-tar -czvf file.tar.gz .
-curl -O http://site.com
-wget http://site.com
-systemctl status nginx
-journalctl -xe
+docker images
+docker run
+systemctl
+journalctl
+ip addr
+host
+dig
+nslookup
+ping -c
+uptime
+who
+w
+last
+uname -a
+env
+path
+alias
+unalias
+locate
+which
+whereis
+cal
+date
+sleep
+df
+du
+tree
+less
+more
+grep
+find
+diff
+comm
+sort
+uniq
+wc
+sed
+awk
+xargs
+tee
+fg
+bg
+jobs
+disown
+nice
+renice
+ps aux
 top
 htop
-df -h
-du -sh *
-netstat -tulpn
-ip addr show
-ping google.com
-git push origin main
-git pull
-git status
-mkdir -p path/to/dir
-touch newfile.txt
-cat file.txt | grep x
-echo "Hello" > out.txt
-tail -f /var/log/syslog
-history
-alias ll='ls -la'
-export PATH=$PATH:/bin
-mv old.txt new.txt
-cp -r folder new_folder
-whoami
+nload
+iftop
+iotop
+lsof
+fuser
+strace
+gdb
+valgrind
+mount
+umount
+fdisk
+mkfs
+fsck
+dd
+sync
+swapoff
+swapon
+lsblk
+lspci
+lsusb
+dmesg
+lsmod
+modprobe
+insmod
+rmmod
+sysctl
+ulimit
+crontab
+at
+service
+init
+telinit
+runlevel
+halt
+poweroff
+reboot
+shutdown
+passwd
+useradd
+usermod
+userdel
+groupadd
+groupmod
+groupdel
+chage
+id
+groups
+visudo
+sudoedit
+apt-get
+apt-cache
+dpkg
+yum
+dnf
+rpm
+zypper
+pacman
+brew
+gem
+pip3
+conda
+cargo
+rustc
+go
+javac
+java
+gcc
+g++
+make
+cmake
+ninja
+ant
+maven
+gradle
+ruby
+perl
+lua
+tcl
+fish
+zsh
+csh
+tcsh
+ksh
+dash
+tmux
+screen
+nohup
+watch
+timeout
+yes
+false
+true
+test
+[
+]
+expr
+bc
+factor
+seq
+shuf
+fold
+fmt
+pr
+nl
+expand
+unexpand
+tabs
+printf
+base64
+md5sum
+sha1sum
+sha256sum
+split
+csplit
+join
+paste
+cut
+tr
+expand
+unexpand
+head
+tail
+rev
+tac
+cat
+nl
+shuf
+sort
+uniq
+wc
+sum
+cksum
+md5sum
+sha1sum
+sha224sum
+sha256sum
+sha384sum
+sha512sum
+tsort
+ptx
+ls
+dir
+vdir
+dircolors
+cp
+install
+ln
+mv
+rm
+shred
+mkdir
+rmdir
+mkfifo
+mknod
+readlink
+chgrp
+chmod
+chown
+touch
+df
+du
+stat
+sync
+truncate
+echo
+printf
+yes
+false
+true
+test
+expr
+tee
 pwd
-man grep
-kill -9 1234
-ps aux | grep python
-sudo reboot
+stty
+printenv
+tty
+who
+whoami
+arch
+date
+id
+logname
+pathchk
+pinky
+users
+uptime
+stdbuf
+timeout
+nohup
+nice
+chcon
+runcon
+kill
+trap
+wait
+chroot
+hostid
+hostname
+su
+groups
+timeout
+stdbuf
+truncate
+shred
+s-sumimasen
