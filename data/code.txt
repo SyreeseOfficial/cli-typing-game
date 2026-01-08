@@ -1,36 +1,73 @@
-def __init__(self):
-return True
-import os
-print(f"{x}")
-if x == y:
-class MyClass:
-for i in range(10):
-while True:
-try:
-except Exception as e:
-with open(file) as f:
-lambda x: x**2
-[x for x in y]
-{k: v for k, v in d}
-@staticmethod
-async def main():
-await asyncio.sleep(1)
-raise ValueError("Error")
-assert x > 0
-from datetime import datetime
+console.log("Hello World");
+print("Hello World")
+System.out.println("Hello World");
+std::cout << "Hello World" << std::endl;
+public static void main(String[] args)
+int main(int argc, char** argv)
+const [count, setCount] = useState(0);
+useEffect(() => { ... }, []);
+export default function App() {
+import React from 'react';
+import express from 'express';
+const app = express();
+app.listen(3000, () => {});
+def __init__(self, name):
 if __name__ == "__main__":
-str.join(",")
-os.path.join("a", "b")
-sys.exit(0)
-# This is a comment
-self.value = 42
-super().__init__()
-return None
-import json
-json.dumps(data)
-elif x is None:
-global variable
-yield from iterator
-f = lambda x, y: x + y
-del my_dict['key']
-range(0, 10, 2)
+[x for x in range(10) if x % 2 == 0]
+async def fetch_data():
+await Promise.all(requests);
+SELECT * FROM users;
+INSERT INTO table VALUES (1, 'name');
+UPDATE users SET score = 100 WHERE id = 1;
+git commit -m "fix: bug in logic"
+npm install --save-dev typescript
+<div className="container mx-auto">
+<h1 class="text-3xl font-bold">
+localStorage.getItem('token');
+window.addEventListener('resize', () => {});
+document.getElementById('app');
+fetch('/api/data').then(res => res.json());
+interface User { id: string; name: string; }
+type Action = { type: 'INCREMENT' };
+struct Point { x: i32, y: i32 }
+fn main() { println!("Hello"); }
+package main; import "fmt";
+func main() { fmt.Println("Go") }
+<?php echo "Hello PHP"; ?>
+var_dump($variable);
+die("Error connecting to DB");
+<html><body><h1>Title</h1></body></html>
+body { margin: 0; padding: 0; }
+display: flex; justify-content: center;
+background-color: #f0f0f0;
+border-radius: 8px; box-shadow: 0 2px 4px;
+const fs = require('fs');
+fs.readFileSync('file.txt', 'utf8');
+JSON.stringify(data, null, 2);
+try { ... } catch (err) { console.error(err); }
+while (true) { break; }
+for (let i = 0; i < arr.length; i++)
+Array.from({ length: 5 }, (_, i) => i);
+Object.keys(myObject).map(key => ...);
+const { value } = target;
+(a, b) => a + b;
+module.exports = { ... };
+include <iostream>
+using namespace std;
+vector<int> v; v.push_back(1);
+ptr = (int*)malloc(sizeof(int));
+free(ptr);
+#include <stdio.h>
+printf("%d\n", result);
+scanf("%s", name);
+enum Color { RED, GREEN, BLUE };
+@Component({ selector: 'app-root' })
+@Injectable() class MyService { }
+val list = listOf(1, 2, 3)
+fun findMax(a: Int, b: Int) = if (a > b) a else b
+String? name = stdin.readLineSync();
+void main() => runApp(MyApp());
+Widget build(BuildContext context) { }
+Set<Integer> unique = new HashSet<>();
+List<String> items = Arrays.asList("a", "b");
+return ResponseEntity.ok(body);
