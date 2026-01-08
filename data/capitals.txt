@@ -1,190 +1,50 @@
-London
-Paris
-Tokyo
-Berlin
-Rome
-Madrid
-Moscow
-Beijing
-Cairo
-Ottawa
-Canberra
-Brasilia
-New Delhi
-Washington
-Wellington
-Athens
-Bangkok
-Seoul
-Stockholm
-Oslo
-Helsinki
-Warsaw
-Vienna
-Lisbon
-Dublin
-Amsterdam
-Brussels
-Copenhagen
-Singapore
-Manila
-Jakarta
-Kuala Lumpur
-Hanoi
-Taipei
-Riyadh
-Tehran
-Baghdad
-Ankara
-Jerusalem
-Damascus
-Beirut
-Amman
-Doha
-Kuwait
-Muscat
-Sana
-Kabul
-Islamabad
-Kathmandu
-Dhaka
-Thimphu
-Colombo
-Male
-Astana
-Tashkent
-Ashgabat
-Bishkek
-Dushanbe
-Ulaanbaatar
-Pyongyang
-Naypyidaw
-Vientiane
-Phnom Penh
-Bandar Seri Begawan
-Dili
-Suva
-Port Moresby
-Honiara
-Port Vila
-Apia
-Nuku'alofa
-Funafuti
-Tarawa
-Majuro
-Palikir
-Yaren
-Nairobi
-Dodoma
-Kampala
-Kigali
-Bujumbura
-Addis Ababa
-Asmara
-Djibouti
-Mogadishu
-Khartoum
-Juba
-N'Djamena
-Niamey
-Bamako
-Ouagadougou
-Accra
-Lome
-Porto-Novo
-Abuja
-Yaounde
-Bangui
-Libreville
-Malabo
-Sao Tome
-Kinshasa
-Brazzaville
-Luanda
-Lusaka
-Harare
-Maputo
-Lilongwe
-Antananarivo
-Moroni
-Victoria
-Port Louis
-Pretoria
-Mbabane
-Maseru
-Gaborone
-Windhoek
-Algiers
-Tunis
-Tripoli
-Rabat
-Nouakchott
-Dakar
-Banjul
-Bissau
-Conakry
-Freetown
-Monrovia
-Yamoussoukro
-Lima
-Quito
-Bogota
-Caracas
-Georgetown
-Paramaribo
-La Paz
-Santiago
-Buenos Aires
-Montevideo
-Asuncion
-Havana
-Kingston
-Port-au-Prince
-Santo Domingo
-Nassau
-Mexico City
-Guatemala City
-Belmopan
-San Salvador
-Tegucigalpa
-Managua
-San Jose
-Panama City
-Castries
-Kingstown
-Bridgetown
-St. George's
-Roseau
-St. John's
-Basseterre
-Reykjavik
-Tallinn
-Riga
-Vilnius
-Minsk
-Kiev
-Chisinau
-Bucharest
-Sofia
-Belgrade
-Zagreb
-Sarajevo
-Podgorica
-Tirana
-Skopje
-Prague
-Bratislava
-Budapest
-Ljubljana
-Vaduz
-Bern
-Luxembourg
-Monaco
-San Marino
-Vatican City
-Andorra la Vella
-Valletta
-Nicosia
-Tbilisi
-Yerevan
-Baku
+Montgomery
+Juneau
+Phoenix
+Little Rock
+Sacramento
+Denver
+Hartford
+Dover
+Tallahassee
+Atlanta
+Honolulu
+Boise
+Springfield
+Indianapolis
+Des Moines
+Topeka
+Frankfort
+Baton Rouge
+Augusta
+Annapolis
+Boston
+Lansing
+Saint Paul
+Jackson
+Jefferson City
+Helena
+Lincoln
+Carson City
+Concord
+Trenton
+Santa Fe
+Albany
+Raleigh
+Bismarck
+Columbus
+Oklahoma City
+Salem
+Harrisburg
+Providence
+Columbia
+Pierre
+Nashville
+Austin
+Salt Lake City
+Montpelier
+Richmond
+Olympia
+Charleston
+Madison
+Cheyenne

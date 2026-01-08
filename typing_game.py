@@ -596,7 +596,7 @@ def play_menu():
         if choice == '1':
             streak_mode("Streak", "words.txt")
         elif choice == '2':
-            streak_mode("Cities", "capitals.txt")
+            streak_mode("Cities", "capitals.txt", exact_match=True)
         elif choice == '3':
             streak_mode("Food", "foods.txt")
         elif choice == '4':
