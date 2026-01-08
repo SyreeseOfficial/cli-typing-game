@@ -573,18 +573,18 @@ def play_menu():
     while True:
         lines = [
             f"{Fore.CYAN}{Style.BRIGHT}--- SELECT CATEGORY ---{Style.RESET_ALL}",
-            f"{Fore.CYAN}1. Standard Streak{Style.RESET_ALL}",
-            f"{Fore.CYAN}2. Capital Cities{Style.RESET_ALL}",
-            f"{Fore.CYAN}3. Foods{Style.RESET_ALL}",
+            f"{Fore.CYAN}1. Streak{Style.RESET_ALL}",
+            f"{Fore.CYAN}2. Cities{Style.RESET_ALL}",
+            f"{Fore.CYAN}3. Food{Style.RESET_ALL}",
             f"{Fore.CYAN}4. Animals{Style.RESET_ALL}",
             f"{Fore.CYAN}5. Lorem Ipsum{Style.RESET_ALL}",
-            f"{Fore.CYAN}6. Code Master (Python){Style.RESET_ALL}",
-            f"{Fore.CYAN}7. Terminal (Linux/Bash){Style.RESET_ALL}",
-            f"{Fore.CYAN}8. Brainrot (Gen Z){Style.RESET_ALL}",
-            f"{Fore.CYAN}9. Uwu (Cursed){Style.RESET_ALL}",
-            f"{Fore.CYAN}10. Linkedin (Corporate){Style.RESET_ALL}",
-            f"{Fore.CYAN}11. Spanish (Language){Style.RESET_ALL}",
-            f"{Fore.CYAN}12. Pokemon (Gen 1){Style.RESET_ALL}",
+            f"{Fore.CYAN}6. Code Snippets{Style.RESET_ALL}",
+            f"{Fore.CYAN}7. Terminal Commands{Style.RESET_ALL}",
+            f"{Fore.CYAN}8. Brainrot{Style.RESET_ALL}",
+            f"{Fore.CYAN}9. UwU{Style.RESET_ALL}",
+            f"{Fore.CYAN}10. LinkedIn Jargon{Style.RESET_ALL}",
+            f"{Fore.CYAN}11. Spanish{Style.RESET_ALL}",
+            f"{Fore.CYAN}12. Pokemon{Style.RESET_ALL}",
             f"{Fore.CYAN}13. Back to Main Menu{Style.RESET_ALL}"
         ]
         
@@ -596,23 +596,23 @@ def play_menu():
         if choice == '1':
             streak_mode("Streak", "words.txt")
         elif choice == '2':
-            streak_mode("Capitals", "capitals.txt")
+            streak_mode("Cities", "capitals.txt")
         elif choice == '3':
-            streak_mode("Foods", "foods.txt")
+            streak_mode("Food", "foods.txt")
         elif choice == '4':
             streak_mode("Animals", "animals.txt")
         elif choice == '5':
             streak_mode("Lorem", "lorem.txt")
         elif choice == '6':
-            streak_mode("Code Master", "code.txt", exact_match=True)
+            streak_mode("Code Snippets", "code.txt", exact_match=True)
         elif choice == '7':
-            streak_mode("Terminal", "terminal.txt", exact_match=True)
+            streak_mode("Terminal Commands", "terminal.txt", exact_match=True)
         elif choice == '8':
             streak_mode("Brainrot", "brainrot.txt")
         elif choice == '9':
-            streak_mode("Uwu", "uwu.txt")
+            streak_mode("UwU", "uwu.txt")
         elif choice == '10':
-            streak_mode("Linkedin", "linkedin.txt")
+            streak_mode("LinkedIn Jargon", "linkedin.txt")
         elif choice == '11':
             streak_mode("Spanish", "spanish.txt")
         elif choice == '12':
