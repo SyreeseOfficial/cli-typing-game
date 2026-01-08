@@ -48,6 +48,30 @@ def get_visible_length(s):
     ansi_escape = re.compile(r'\x1B(?:[@-Z\\-_]|\[[0-?]*[ -/]*[@-~])')
     return len(ansi_escape.sub('', s))
 
+def get_combo_tier(combo):
+    """
+    Returns (tier_name, multiplier, color_code) based on combo count.
+    Tiers:
+      0-2:   None
+      3-4:   Flow State (1.5x) - Cyan
+      5-6:   Overclocked (2x) - Green
+      7-9:   Surge (3x) - Yellow
+      10-11: Unstoppable (5x) - Red
+      12+:   God Mode (8x) - Magenta
+    """
+    if combo >= 12:
+        return "GOD MODE", 8.0, Fore.MAGENTA + Style.BRIGHT
+    elif combo >= 10:
+        return "UNSTOPPABLE", 5.0, Fore.RED + Style.BRIGHT
+    elif combo >= 7:
+        return "SURGE", 3.0, Fore.YELLOW + Style.BRIGHT
+    elif combo >= 5:
+        return "OVERCLOCKED", 2.0, Fore.GREEN + Style.BRIGHT
+    elif combo >= 3:
+        return "FLOW STATE", 1.5, Fore.CYAN + Style.BRIGHT
+    else:
+        return "", 1.0, ""
+
 def draw_centered(lines, input_prompt=None):
     """
     Clears screen and draws the list of 'lines' centered vertically and horizontally.
@@ -214,14 +238,19 @@ def streak_mode(mode_name, word_filename):
             remaining = max(0, int(time_limit - elapsed))
             
             # Determine multiplier and combo text
-            multiplier = 1.0
+            tier_name, multiplier, color_code = get_combo_tier(combo)
+            
             combo_text = ""
-            if combo >= 5:
-                multiplier = 2.0
-                combo_text = f" {Fore.RED}{Style.BRIGHT}ON FIRE! (x2.0){Style.RESET_ALL}"
-            elif combo >= 3:
-                multiplier = 1.5
-                combo_text = f" {Fore.YELLOW}{Style.BRIGHT}HEATING UP! (x1.5){Style.RESET_ALL}"
+            if tier_name:
+                # Format: " TIER_NAME (Nx)"
+                # e.g. " GOD MODE (8x)"
+                # We interpret "x" as multiplier symbol. User asked for "NAME (Nx)"
+                if multiplier.is_integer():
+                    mult_str = f"{int(multiplier)}x"
+                else:
+                    mult_str = f"{multiplier}x"
+                
+                combo_text = f" {color_code}{tier_name} ({mult_str}){Style.RESET_ALL}"
             
             target_word = random.choice(current_words)
             
