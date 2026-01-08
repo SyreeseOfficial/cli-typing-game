@@ -11,7 +11,18 @@ from colorama import Fore, Back, Style, init
 # Initialize colorama
 init(autoreset=True)
 
+# Try importing pygame
+try:
+    import pygame
+    PYGAME_AVAILABLE = True
+except ImportError:
+    PYGAME_AVAILABLE = False
+    print("Warning: pygame not installed. Audio will be disabled.")
+    time.sleep(1)
+
 # --- Configuration & Data ---
+SOUNDS = {}
+
 
 HIGHSCORE_FILE = "highscores.json"
 WORD_FILE = "words.txt"
@@ -41,6 +52,72 @@ def load_words(filename):
         return BACKUP_WORDS
     
     return words
+
+
+def organize_sound_files():
+    """Checks for a root 'sounds' folder and moves it to 'data/sounds'."""
+    root_sounds = "sounds"
+    dest_sounds = os.path.join("data", "sounds")
+    
+    if os.path.exists(root_sounds) and os.path.isdir(root_sounds):
+        if not os.path.exists(dest_sounds):
+            print(f"{Fore.YELLOW}Organizing: Moving '{root_sounds}' to '{dest_sounds}'...{Style.RESET_ALL}")
+            try:
+                shutil.move(root_sounds, dest_sounds)
+                time.sleep(1)
+            except Exception as e:
+                print(f"{Fore.RED}Error moving sounds folder: {e}{Style.RESET_ALL}")
+                time.sleep(2)
+        else:
+            # Destination already exists, maybe merge? For now just warn
+            print(f"{Fore.YELLOW}Note: '{root_sounds}' exists but '{dest_sounds}' also exists. Manual cleanup may be needed.{Style.RESET_ALL}")
+            time.sleep(2)
+
+def init_audio():
+    """Initializes pygame mixer and loads sounds."""
+    global SOUNDS
+    if not PYGAME_AVAILABLE:
+        return
+
+    try:
+        pygame.mixer.init()
+    except Exception as e:
+        print(f"{Fore.RED}Audio Init Failed: {e}{Style.RESET_ALL}")
+        return
+
+    sound_files = {
+        "splash": "splash.wav",
+        "countdown": "countdown.wav",
+        "correct": "correct.wav",
+        "levelup": "levelup.wav",
+        "gameover": "gameover.wav",
+        "victory": "victory.wav"
+    }
+    
+    base_path = os.path.join("data", "sounds")
+    
+    print(f"{Fore.CYAN}Loading sounds...{Style.RESET_ALL}")
+    for name, filename in sound_files.items():
+        path = os.path.join(base_path, filename)
+        if os.path.exists(path):
+            try:
+                SOUNDS[name] = pygame.mixer.Sound(path)
+            except Exception as e:
+                print(f"{Fore.RED}Failed to load {filename}: {e}{Style.RESET_ALL}")
+        else:
+            print(f"{Fore.YELLOW}Warning: Sound file '{filename}' not found.{Style.RESET_ALL}")
+    
+    # Small delay to let user see load status if any issues
+    # time.sleep(0.5)
+
+def play_sound(name):
+    """Plays a sound by name if available."""
+    if name in SOUNDS:
+        try:
+            SOUNDS[name].play()
+        except:
+            pass
+
 
 
 def get_visible_length(s):
@@ -140,10 +217,12 @@ def splash_screen():
         f"{Style.RESET_ALL}"
     ]
     
+    play_sound("splash")
     draw_centered(logo, input_prompt=f"{Fore.YELLOW}Press Enter to Start...{Style.RESET_ALL}")
 
 def countdown():
     """Runs a 3-2-1-GO countdown."""
+    play_sound("countdown")
     for i in [3, 2, 1]:
         draw_centered([f"{Fore.CYAN}{Style.BRIGHT}{i}"])
         time.sleep(1)
@@ -233,6 +312,7 @@ def streak_mode(mode_name, word_filename):
             # 1. Check time BEFORE showing word
             elapsed = time.time() - start_time
             if elapsed >= time_limit:
+                play_sound("victory")
                 break # Go to Game Over logic
 
             remaining = max(0, int(time_limit - elapsed))
@@ -272,6 +352,7 @@ def streak_mode(mode_name, word_filename):
             # 2. Check time AFTER input
             elapsed = time.time() - start_time
             if elapsed >= time_limit:
+                play_sound("victory")
                 break # Go to Game Over logic
 
             # 3. Sudden Death Check
@@ -285,6 +366,13 @@ def streak_mode(mode_name, word_filename):
                 correct_words += 1
                 
                 # Success Flash - Centered manually since we don't want to clear screen
+                play_sound("correct")
+                
+                # Check for combo tier up (simple check: if combo hits a threshold exactly)
+                # Tiers: 3, 5, 7, 10, 12
+                if combo in [3, 5, 7, 10, 12]:
+                    play_sound("levelup")
+                
                 msg = f"{Fore.GREEN}{target_word} OK! (+{points}){Style.RESET_ALL}"
                 cols, _ = shutil.get_terminal_size()
                 vis_len = get_visible_length(msg)
@@ -293,6 +381,8 @@ def streak_mode(mode_name, word_filename):
                 time.sleep(0.2)
             else:
                 combo = 0 # Reset combo on mistake (though game ends here anyway)
+                
+                play_sound("gameover")
                 
                 # Fail Message - Centered manually
                 msg = f"{Fore.RED}Wrong! You typed '{user_input}', expected '{target_word}'.{Style.RESET_ALL}"
@@ -416,6 +506,8 @@ if __name__ == "__main__":
 
 
     # Clear screen immediately on launch
+    organize_sound_files()
+    init_audio()
     splash_screen()
     try:
         main_menu()
